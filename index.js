@@ -7,9 +7,9 @@ const auth = require('./utils/auth');
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  // context: ({ req }) => {
-  //   auth(req);
-  // },
+  context: ({ req }) => {
+    auth(req);
+  },
 });
 
 server.listen().then(({ url }) => {
