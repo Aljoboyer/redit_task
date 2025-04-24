@@ -13,6 +13,7 @@ module.exports = gql`
     functionString: String
     resourceTemplateId: ID
     resourceTemplate: ResourceTemplate
+    params: params
   }
 
   type Trigger {
@@ -83,8 +84,17 @@ module.exports = gql`
     global: Boolean
     colour: String
   }
+  type params{
+            to: String
+            from: String,
+            subject: String
+            text: String
+        }
 
   type Query {
-    Node(input: ID): [NodeObject]
+    Node(input: ID): NodeObject
+    AllNode:[NodeObject]
+    Action(input: ID): Action
+    AllAction:[Action]
   }
 `;
