@@ -107,5 +107,7 @@ module.exports = gql`
     AllResponse: [Response]
     Trigger(input: ID): Trigger
     AllTrigger: [Trigger]
+    ResourceTemplate(input: ID): ResourceTemplate
+    AllResourceTemplate: [ResourceTemplate]
   }
 `;
