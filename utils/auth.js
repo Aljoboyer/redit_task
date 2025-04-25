@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-const SECRET = "te@mM@n@gement"; // Replace with your actual secret
+const SECRET = "te@mM@n@gement"; 
 
 module.exports = (req) => {
   const authHeader = req.headers.authorization || "";
@@ -11,8 +11,8 @@ module.exports = (req) => {
   }
 
   try {
-    const decoded = jwt.verify(token, SECRET); // ✅ Validate token
-    return { user: decoded }; // 👈 You can access this in context
+    const decoded = jwt.verify(token, SECRET); 
+    return { user: decoded };
   } catch (err) {
     throw new Error("Unauthorized - Invalid token");
   }
