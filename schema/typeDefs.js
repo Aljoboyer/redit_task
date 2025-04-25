@@ -25,6 +25,7 @@ module.exports = gql`
     functionString: String
     resourceTemplateId: ID
     resourceTemplate: ResourceTemplate
+    params: params
   }
 
   type Response {
@@ -89,12 +90,22 @@ module.exports = gql`
             from: String,
             subject: String
             text: String
+            keywords: [keywords]
+            payloads: [String]
         }
+  type keywords{
+          caseSensitive: Boolean
+          keyword: [String]
+      }
 
   type Query {
     Node(input: ID): NodeObject
     AllNode:[NodeObject]
     Action(input: ID): Action
     AllAction:[Action]
+    Response(input: ID): Response
+    AllResponse: [Response]
+    Trigger(input: ID): Trigger
+    AllTrigger: [Trigger]
   }
 `;

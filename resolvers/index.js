@@ -43,6 +43,25 @@ const resolvers = {
       return actionData
     },
 
+    Response: (_, { input }) => {
+      const findData = responseData.find(n => n._id === input);
+      return findData
+    },
+
+    AllResponse: () => {
+      return responseData
+    },
+
+    Trigger: (_, { input }) => {
+      const findData = triggerData.find(n => n._id === input);
+      return findData
+    },
+
+    AllTrigger: () => {
+      
+      return triggerData
+    },
+
   },
 
 };
