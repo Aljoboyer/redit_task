@@ -53,7 +53,7 @@ You need to provide a Bearer token in the header to access the API.
 
 - Example Token:
   ```
-  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJlZGl0QGdtYWlsLmNvbSIsImlkIjoicmVkaXQiLCJpYXQiOjE3NDU1Nzc0MjQsImV4cCI6MTc0NTc1MDIyNH0.v4ek0P7q_UPeXdAhosNmygkjHpPKckaDx0eOoNBejl0
+  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlRlc3RpbmdhQGdtYWlsLmNvbSIsImlhdCI6MTc0NjAwNzM2NywiZXhwIjoxNzQ2NjEyMTY3fQ.yLAIGduLTi2wUU24Fhvhn68qq6WFdgxBrvJJAbzdK5Y
   ```
 
 ---
