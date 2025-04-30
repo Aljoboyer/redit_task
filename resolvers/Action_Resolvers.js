@@ -3,12 +3,28 @@ const actionData = require('../data/action.json');
 const ActionResolvers = {
   Query: {
     Action: (_, { input }) => {
-      const findData = actionData.find(n => n._id === input);
-      return findData
+      try {
+        if(!input){
+          throw new Error("ID Required");
+        }
+        const findData = actionData.find(n => n._id === input);
+        if(!findData){
+          throw new Error("Action not found");
+        }
+        return findData
+      } catch (error) {
+        throw new Error(error);
+        
+      }
     },
 
     AllAction: () => {
-      return actionData
+     try {
+       return actionData;
+     } catch (error) {
+      throw new Error(error);
+
+     }
     },
 
   },

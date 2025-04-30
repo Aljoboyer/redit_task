@@ -4,10 +4,9 @@ const auth = require('./utils/auth');
 const typeDefs = require('./schema/index');
 const Resolvers = require('./resolvers');
 
-
 async function startServer() {
   const server = new ApolloServer({
-    typeDefs: [typeDefs], 
+    typeDefs: typeDefs, 
     resolvers: Resolvers,
     
     context: ({ req }) => {
@@ -21,7 +20,7 @@ async function startServer() {
         path: err.path,
         code: err.extensions?.code || 'INTERNAL_SERVER_ERROR'
       };
-    }
+    },
   });
 
   const { url } = await server.listen({
