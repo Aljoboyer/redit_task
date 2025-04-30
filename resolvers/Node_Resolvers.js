@@ -3,13 +3,7 @@ const triggerData = require('../data/trigger.json');
 const responseData = require('../data/response.json');
 const actionData = require('../data/action.json');
 
-const { GraphQLJSON } = require('graphql-type-json');
-const { GraphQLLong } = require('graphql-scalars');
-
 const NodeResolvers = {
-  JSON: GraphQLJSON,
-  Long: GraphQLLong,
-
   Query: {
     Node: (_, { input }) => {
       const findNodeData = nodeData.find(n => n._id === input);

@@ -1,15 +1,14 @@
 require('dotenv').config();
 const { ApolloServer } = require('apollo-server');
 const auth = require('./utils/auth');
-const NodeResolvers = require('./resolvers/node_resolvers');
-const ActionResolvers = require('./resolvers/Action_Resolvers');
-const ResponseResolvers = require('./resolvers/Response_Resolvers');
 const typeDefs = require('./schema/typeDefs');
+const Resolvers = require('./resolvers');
+
 
 async function startServer() {
   const server = new ApolloServer({
     typeDefs: [typeDefs], 
-    resolvers: [NodeResolvers, ActionResolvers, ResponseResolvers],
+    resolvers: Resolvers,
     
     context: ({ req }) => {
       auth(req);
